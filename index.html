@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Invitación de Boda</title>
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+    </head>
+    <body>
+      <div class="contenedor">
+        <section id="bienvenida">
+          <div id="contador">
+            <h2>Sólo quedan...</h2>
+            <div id="timer">
+              <span id="dias"></span> días 
+              <span id="horas"></span> horas 
+              <span id="minutos"></span> minutos 
+              <span id="segundos"></span> segundos
+            </div>
+          </div>
+        </section>
+
+        <section id="historia">
+          <h2>¡Estamos muy emocionadas!</h2>
+          <p>Después de 9 años...creemos que ya es hora de dar el siguiente paso.</p>
+          <p>Y por supuesto queremos celebrarlo con las personas que más nos <b>importan</b>, por eso os queremos invitar a que <b>disfrutéis </b>con nosotras de este día.</p>
+          <p>Además! Como nuestra <b>prioridad</b> es que disfrutéis y no os preocupéis de nada más, ¡no hay código de vestimenta!</p>
+          <p>¿Que quieres venir con vaqueros? ¿Que quieres venir en zapatillas? ¿Es que la niña/o no quiere arreglarse? <b>Nos parece todo perfecto.</b></p>
+          <p><b>Lo importante es que todas estéis cómodas.</b></p> 
+        </section>
+
+        <section id="detalles">
+          <h2>Detalles del Evento</h2>
+          <p>La <strong>Ceremonia</strong> será a las 12:00 hrs en el salón de plenos del Ayuntamiento de Maracena. Allí daremos el <b>Sí, quiero</b> delante de todas vosotras y con la sencillez que nos caracteriza.</p>
+          <p>Después, la <strong>Celebración</strong> será a las 14:00 hrs, en el restaurante Bureo, en el que podremos disfrutar de buena comida y bebida hasta la noche.</p>
+          <p>Y, por último! Hemos creado una <b>lista de Spotify</b> con canciones para ese día. Si quieres añadir alguna que te guste sólo pincha en el link    &rarr; <a href="https://open.spotify.com/playlist/7eK5G7815ktzLqU0CiWMQT?si=4c31246e7d3d4338" target="_blank">Lista</a></p>
+          
+        </section>
+        
+        <section id="ubicacion">
+          <h2>Ubicaciones</h2>
+          <p><b>1- Aparcamiento gratuito.</b> En la zona donde se hará la ceremonia no se puede aparcar, así que os señalamos una zona de aparcamiento gratuito para poder dejar los coches que está a medio camino entre el sitio de la ceremonia y de la celebración.</p>
+          <p><b>2- Ayuntamiento de Maracena.</b> En el salón de plenos es donde se hará la celebración.</p>
+          <p><b>3- Bureo Casa de Comidas.</b> Esta es la parte que más nos gusta a todos, la celebración.</p>
+          <div id="map"></div>
+        </section>
+
+        <section id="rsvp">
+          <h2>Confirma tu Asistencia</h2>
+
+          <iframe name="formTarget" style="display:none;"></iframe>
+
+          <form id="rsvpForm" action="https://formsubmit.co/mroldanrincon@gmail.com" method="POST" target="formTarget">
+
+              <input type="hidden" name="_captcha" value="false">
+
+              <label for="asistencia">¿Asistirás?</label>
+              <select id="asistencia" name="asistencia" required>
+                <option value="">Selecciona una opción</option>
+                <option value="Sí">¡Pues claro!</option>
+                <option value="No">No</option>
+              </select>
+        
+              <label for="numPersonas">¿Cuántos sois?</label>
+              <input type="number" id="numPersonas" name="numeroPersonas" min="1" max="10" required>
+        
+              <label for="nombre">Nombre:</label>
+              <input type="text" id="nombre" name="nombre" required>
+        
+              <label for="mensaje">Mensaje:</label>
+              <textarea id="mensaje" name="mensaje" placeholder="Intolerancias, alergias, preferencias alimentarias y/o nombres de acompañantes, sean niños o adultos"></textarea>
+        
+              <button type="submit">Enviar</button>
+          </form>
+
+          <div id="modalConfirmacion" style="display: none;">
+            <section>
+              <button id="cerrarModal">&times;</button>
+              <h1 id="modalTitulo">🎉 ¡Gracias por confirmar tu asistencia! 🎉</h1>
+              <h2 id="modalSubtitulo">Estamos deseando compartir este día con vosotras</h2>
+            </section>
+          </div>
+        </section>
+      </div>
+
+      <footer>
+        <p>Contactad con nosotras para cualquier duda</p>
+        <p><a href="tel:636115837">María - 636 11 58 37</a></p>
+        <p><a href="tel:644565744">Gloria - 644 56 57 44</a></p>
+      </footer>
+
+      <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+      <script src="js/script.js"></script>
+    </body>
+</html>
