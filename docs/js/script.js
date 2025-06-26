@@ -29,7 +29,7 @@ window.addEventListener('beforeunload', () => clearInterval(intervalo));
 // ===== MAPA LEAFLET =====
 document.addEventListener('DOMContentLoaded', () => {
   const ayuntamiento = [37.20773942659509, -3.6331526497618167];
-  const bureo = [37.203739254223166, -3.638337982684902];
+  const picon = [37.17627067564959, -3.6046956091838145];
   const parking = [37.20463164521322, -3.63761135989847];
 
   const map = L.map('map').setView(ayuntamiento, 15);
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const marcadores = [
     { pos: parking, num: 1, texto: "<b>1. Parking gratuito</b>" },
     { pos: ayuntamiento, num: 2, texto: "<b>2. Ayuntamiento de Maracena</b><br>(Ceremonia)" },
-    { pos: bureo, num: 3, texto: "<b>3. Bureo</b><br>(Celebración)" }
+    { pos: picon, num: 3, texto: "<b>3. Picón</b><br>(Celebración)" }
   ];
 
   marcadores.forEach(m => {
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (window.innerWidth <= 768) {
     map.fitBounds([
       parking,
-      bureo
+      picon
     ], { padding: [50, 50] });
   } else {
     map.openPopup(); 

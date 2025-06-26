@@ -59,6 +59,10 @@ section p a {
   text-decoration: none;
 }
 
+.sangria {
+  text-indent: 2.5em;
+}
+
 /* CONTENEDOR PRINCIPAL */
 .contenedor {
   max-width: 900px;
